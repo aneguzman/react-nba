@@ -1,5 +1,5 @@
 # react-nba
 NBA application using React
 
-#API
+# API
 data.nba.net
