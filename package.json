@@ -1,11 +1,16 @@
 {
-  "name": "pluralsight-redux-starter",
+  "name": "react-nba",
   "version": "1.0.0",
-  "description": "Starter kit for React and Redux Pluralsight course by Cory House",
+  "description": "NBA App created using react JS",
   "author": "Cory House",
   "license": "MIT",
   "scripts":{
-    "start": "babel-node server.js"
+    "start": "npm-run-all --parallel open:src lint:watch test:watch",
+    "open:src": "babel-node server.js",
+    "lint": "node_modules/.bin/esw webpack.config.* src",
+    "lint:watch": "npm run lint -- --watch",
+    "test": "mocha --reporter progress testSetup.js \"src/**/*.test.js\"",
+    "test:watch": "npm run test -- --watch"
   },
   "dependencies": {
     "babel-polyfill": "6.8.0",
