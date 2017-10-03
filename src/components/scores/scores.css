@@ -1,0 +1,34 @@
+.card{
+    width: 300px;
+    border: 1px solid #ccc;
+    height: 80px;
+    padding: 20px;
+    margin: 10px;
+    display: inline-block;
+}
+
+.time-quarter-placeholder{
+    text-align: right;
+}
+
+.team-logo{
+    display: inline-block;
+}
+
+.team-name{
+    font-size: 20px;
+    padding: 0px 10px;
+    display: inline-block;
+}
+
+.score-info{
+    padding: 5px;
+}
+
+.score{
+    font-weight: bold;
+    font-size: 14px;
+    float: right;
+    position: relative;
+    top: 10px;
+}
