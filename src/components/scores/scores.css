@@ -1,7 +1,9 @@
 .card{
     width: 25%;
+    min-width: 220px;
     height: 140px;
-    margin: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
     display: inline-block;
 }
 
@@ -19,7 +21,7 @@
 }
 
 .team-name{
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .score-info{

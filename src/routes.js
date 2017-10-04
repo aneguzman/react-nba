@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, IndexRoute } from 'react-router';
+import { Route, IndexRoute, NotFoundRoute } from 'react-router';
 import App from './components/App';
 import HomePage from './components/home/HomePage';
 import ScoresPage from './components/scores/ScoresPage';
@@ -12,5 +12,6 @@ export default (
         <Route path="scores" component={ ScoresPage } />
         <Route path="standings" component={ StandingsPage } />
         <Route path="stats" component={ StatsPage } />
+        <Route path="*" component={ HomePage } />
     </Route>
 );

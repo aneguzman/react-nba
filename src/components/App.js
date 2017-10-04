@@ -3,9 +3,6 @@ import Header from './common/Header';
 
 class App extends React.Component {
     render() {
-        let stylex = {
-            
-          };
         return (
             <div>
                 <Header/>
