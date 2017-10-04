@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { IndexLink, Link } from 'react-router';
-
+import './header.css';
 const Header = () => {
     return (
         <nav>

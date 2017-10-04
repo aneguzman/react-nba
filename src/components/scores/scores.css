@@ -1,24 +1,25 @@
 .card{
-    width: 300px;
-    border: 1px solid #ccc;
-    height: 80px;
-    padding: 20px;
+    width: 25%;
+    height: 140px;
     margin: 10px;
     display: inline-block;
 }
 
 .time-quarter-placeholder{
     text-align: right;
+    padding-bottom: 8px;
+    font-weight: bold;
 }
 
-.team-logo{
-    display: inline-block;
+.team-logo > img{
+    width: 38px;
+    position: relative;
+    top: -3px;
+    padding-right: 5px;
 }
 
 .team-name{
-    font-size: 20px;
-    padding: 0px 10px;
-    display: inline-block;
+    font-size: 18px;
 }
 
 .score-info{
@@ -26,9 +27,7 @@
 }
 
 .score{
-    font-weight: bold;
-    font-size: 14px;
-    float: right;
-    position: relative;
-    top: 10px;
+    font-size: 18px;
+    text-align: right;
+    font-weight: 500;
 }

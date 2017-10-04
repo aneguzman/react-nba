@@ -1,0 +1,10 @@
+body{
+    background-color: #f0f0f0 !important;
+}
+
+#mainContent{
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: #fdfdfd;
+    padding:20px;
+}
