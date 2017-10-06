@@ -6,11 +6,14 @@
     color: #fff;
     padding-left: 10%;
     position: relative;
+    max-height: 100px;
 }
 
 .nba-logo > img{
     width: 150px;
     height: 150px;
+    position: relative;
+    top: -27px;
 }
 
 #header nav{
