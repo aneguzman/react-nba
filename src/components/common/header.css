@@ -1,10 +1,22 @@
-nav{
+#header{
     width: 100%;
     background-color: #333;
     min-height: 50px;
     font-size: 18px;
     color: #fff;
     padding-left: 10%;
+    position: relative;
+}
+
+.nba-logo > img{
+    width: 150px;
+    height: 150px;
+}
+
+#header nav{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 nav > a{
