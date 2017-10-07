@@ -31,6 +31,12 @@ app.get('/api/scores/', function(req, res) {
     });
 });
 
+app.get('/api/news/', function(req, res) {
+    request('https://feeds.thescore.com/nba.rss', function(error, response, body) {
+        res.send(body);
+    });
+});
+
 app.listen(port, function(err) {
     if (err) {
         console.log(err);

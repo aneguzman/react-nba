@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import ScoreCard from './ScoreCard';
 
 const ScoreCardList = (props) => {
@@ -9,4 +9,7 @@ const ScoreCardList = (props) => {
     )
   }
 
-  export default ScoreCardList;
+ScoreCardList.PropTypes = {
+  games: PropTypes.array
+}
+export default ScoreCardList;

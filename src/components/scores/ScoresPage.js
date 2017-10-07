@@ -16,7 +16,6 @@ class ScoresPage extends React.Component{
     }
 
     handleDatePicker(date){
-        console.log(date);
         this.setState({ startDate: date })
         this.getScores(date);  
     }

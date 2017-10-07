@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import './scores.css';
 import {  Row, Col } from 'elemental';
 import moment from 'moment';
@@ -30,6 +30,14 @@ const ScoreTimeInfo = (props) => {
         </span>
         
     );
+}
+
+ScoreTimeInfo.propTypes = {
+    startTimeET: PropTypes.string,
+    startTimeUTC: PropTypes.string,
+    currentPeriod: PropTypes.number,
+    clock: PropTypes.string,
+    gameStatus: PropTypes.number
 }
 
 export default ScoreTimeInfo;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import './scores.css';
 import {  Row, Col } from 'elemental';
 
@@ -21,6 +21,11 @@ const ScoreInfo = (props) => {
             </Row>
         </div>
     );
+}
+
+ScoreInfo.propTypes = {
+    triCode: PropTypes.string,
+    score: PropTypes.string
 }
 
 export default ScoreInfo;

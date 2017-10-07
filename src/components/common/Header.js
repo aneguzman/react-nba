@@ -11,7 +11,7 @@ const Header = () => {
             </Col>
             <Col sm='5/6'>
                 <nav>
-                    <IndexLink to="/feed" activeClassName="active">Home</IndexLink>
+                    <IndexLink to="/feed" activeClassName="active">Feed</IndexLink>
                     {"  |  "}
                     <Link to="/scores" activeClassName="active">Scores</Link>
                     {"  |  "}
