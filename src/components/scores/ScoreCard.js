@@ -1,8 +1,9 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { Card, Row, Col } from 'elemental' ;
 import ScoreInfo from './ScoreInfo';
 import ScoreTimeInfo from './ScoreTimeInfo';
 import './scores.css';
+import PropTypes from 'prop-types';
 
 const ScoreCard = (props) => {
     return (

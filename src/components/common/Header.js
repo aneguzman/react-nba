@@ -1,5 +1,5 @@
-import React, { PropTypes } from 'react';
-import { IndexLink, Link } from 'react-router';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { Row, Col } from 'elemental';
 import './header.css';
 import img from '../../../public/images/nba_react_logo_blue.png';
@@ -11,13 +11,13 @@ const Header = () => {
             </Col>
             <Col sm='5/6'>
                 <nav>
-                    <IndexLink to="/feed" activeClassName="active">Feed</IndexLink>
+                    <Link to="/feed" className="active">Feed</Link>
                     {"  |  "}
-                    <Link to="/scores" activeClassName="active">Scores</Link>
+                    <Link to="/scores" className="active">Scores</Link>
                     {"  |  "}
-                    <Link to="/standings" activeClassName="active">Standings</Link>
+                    <Link to="/standings" className="active">Standings</Link>
                     {"  |  "}
-                    <Link to="/stats" activeClassName="active">Stats</Link>
+                    <Link to="/stats" className="active">Stats</Link>
                 </nav>
             </Col>
         </Row>

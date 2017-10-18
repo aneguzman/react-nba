@@ -1,6 +1,7 @@
 import React from 'react';
 import NewsList from './NewsList';
-var convert = require('xml-js');
+let convert = require('xml-js');
+import PropTypes from 'prop-types';
 
 class NewsFeedPage extends React.Component{
     constructor(props){
@@ -22,8 +23,6 @@ class NewsFeedPage extends React.Component{
             .then((xmlText) => {
                 var jsonData = convert.xml2json(xmlText, {compact: true, spaces: 4});
                 var news = JSON.parse(jsonData).rss.channel.item
-                // console.log(xml.getElementByTagName('title'))
-                console.log(news);
                 this.setState({ news: news})
             }).catch(function(ex) {
                 console.log('parsing failed', ex)

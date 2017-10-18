@@ -1,6 +1,7 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import './scores.css';
 import {  Row, Col } from 'elemental';
+import PropTypes from 'prop-types';
 
 const ScoreInfo = (props) => {
     let imgSrc = `https://cdn.nba.net/assets/logos/teams/secondary/web/${props.triCode}.svg`

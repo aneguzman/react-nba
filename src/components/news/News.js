@@ -1,7 +1,8 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { Row, Col } from 'elemental' ;
 import './news.css';
 import moment from 'moment';
+import PropTypes from 'prop-types';
 
 const News = (props) => {
     return (

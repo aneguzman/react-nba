@@ -1,5 +1,6 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import ScoreCard from './ScoreCard';
+import PropTypes from 'prop-types';
 
 const ScoreCardList = (props) => {
     return (
@@ -12,4 +13,5 @@ const ScoreCardList = (props) => {
 ScoreCardList.PropTypes = {
   games: PropTypes.array
 }
+
 export default ScoreCardList;
