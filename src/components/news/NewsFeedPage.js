@@ -16,7 +16,7 @@ class NewsFeedPage extends React.Component{
     } 
 
     getNews(){
-        fetch('http://localhost:3000/api/news')
+        fetch('https://feeds.thescore.com/nba.rss')
             .then((response) => {
                 return response.text();
             })

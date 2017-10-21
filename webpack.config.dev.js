@@ -41,28 +41,6 @@ export default {
                 test: /\.json$/,
                 loader: 'json-loader'
             },
-            // {
-            //     test: /\.html$/,
-            //     use: [ {
-            //       loader: 'html-loader',
-            //       options: {
-            //         minimize: true,
-            //         removeComments: false,
-            //         collapseWhitespace: false
-            //       }
-            //     }]
-            // },
-            // {
-            //     test: /\.md$/,
-            //     use: [
-            //         {
-            //             loader: "markdown-loader",
-            //             options: {
-            //                 /* your options here */
-            //             }
-            //         }
-            //     ]
-            // },
             { test: /\.(jpe?g|png|gif|svg)$/i,
                 loaders: [ 'file?hash=sha512&digest=hex&name=[hash].[ext]',
                   'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
