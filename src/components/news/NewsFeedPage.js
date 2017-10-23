@@ -1,14 +1,20 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import NewsList from './NewsList';
 let convert = require('xml-js');
 import PropTypes from 'prop-types';
+import { fetchNewsData } from '../../actions/newsActions';
+
+@connect((store) => {
+    return {
+        news: store.news.news,
+        isLoading: store.news.isLoading
+    }
+})
 
 class NewsFeedPage extends React.Component{
     constructor(props){
         super(props);
-        this.state = {
-            news: []
-        };
     }
 
     componentWillMount(){
@@ -16,24 +22,14 @@ class NewsFeedPage extends React.Component{
     } 
 
     getNews(){
-        fetch('https://feeds.thescore.com/nba.rss')
-            .then((response) => {
-                return response.text();
-            })
-            .then((xmlText) => {
-                var jsonData = convert.xml2json(xmlText, {compact: true, spaces: 4});
-                var news = JSON.parse(jsonData).rss.channel.item
-                this.setState({ news: news})
-            }).catch(function(ex) {
-                console.log('parsing failed', ex)
-            }); 
+        fetchNewsData(this.props.dispatch);
     }
 
     render(){
         return (
             <div>
                 <h1>Feed</h1>
-                <NewsList news={this.state.news} />
+                <NewsList news={this.props.news} />
             </div>
         ); 
     }

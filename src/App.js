@@ -4,8 +4,8 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import reducers from './reducers';
 import Main from './components/Main';
-import NewsFeedPage from './components/news/NewsFeedPage';
-import ScoresPage from './components/scores/ScoresPage';
+import NewsContainer from './containers/NewsContainer';
+import ScoresContainer from './containers/ScoresContainer';
 import StandingsPage from './components/standings/StandingsPage';
 import StatsPage from './components/stats/StatsPage';
 
@@ -15,10 +15,10 @@ const App = () => (
     <Provider store={ store }>
         <Main>
             <Switch>
-                <Route path="/feed" component={NewsFeedPage}/>
-                <Route path="/scores" component={ScoresPage}/>
-                <Route path="/standings" component={StandingsPage}/>
-                <Route path="/stats" component={StatsPage}/>
+                <Route path="/feed" component={ NewsContainer }/>
+                <Route path="/scores" component={ ScoresContainer }/>
+                <Route path="/standings" component={ StandingsPage }/>
+                <Route path="/stats" component={ StatsPage }/>
             </Switch>
         </Main>
     </Provider>

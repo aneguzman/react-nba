@@ -13,16 +13,15 @@ export function fetchScoresData(dispatch, date){
 
     return getScores(date.format('YYYYMMDD'))
     .then( data => {
+        let games = JSON.parse(data).games;
         dispatch({
             type: FETCH_SCORES_DATA_COMPLETED,
             payload: {
-                games: data.games,
+                games: games,
                 date: date
             }
         });
     }).catch( err => {
-        console.log('parsing failed', ex);
-
         dispatch({
             type: FETCH_SCORES_DATA_FAILED,
             isError: true,
