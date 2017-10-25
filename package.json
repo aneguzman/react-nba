@@ -5,7 +5,8 @@
   "author": "Aneudy Guzman",
   "license": "MIT",
   "scripts": {
-    "start": "npm-run-all --parallel lint:watch test:watch",
+    "start": "npm-run-all --parallel open:src lint:watch test:watch",
+    "open:src": "babel-node server.js",
     "lint": "node_modules/.bin/esw webpack.config.* src",
     "lint:watch": "npm run lint -- --watch",
     "test": "mocha --reporter progress testSetup.js \"src/**/*.test.js\"",

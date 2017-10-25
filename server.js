@@ -25,9 +25,13 @@ app.get('/', function(req, res) { //root call
 
 var request = require('request');
 app.get('/api/scores/', function(req, res) {
-    console.log(req.param('date'));
     var currentDate = req.param('date');
     request('http://data.nba.net/prod/v1/' + currentDate + '/scoreboard.json', function(error, response, body) {
+        res.json(body);
+    });
+});
+app.get('/api/standings/', function(req, res) {
+    request('http://data.nba.net/10s/prod/v1/current/standings_conference.json', function(error, response, body) {
         res.json(body);
     });
 });
