@@ -1,11 +1,10 @@
 const convert = require('xml-js');
 
-// const corsProxy = 'https://cors-anywhere.herokuapp.com/';
+const corsProxy = 'https://cors-anywhere.herokuapp.com/';
 const newsApiUrl = 'https://feeds.thescore.com/nba.rss';
-const standingsUrl = 'http://localhost:3000/api/standings/';
+const standingsUrl =`${corsProxy}http://data.nba.net/10s/prod/v1/current/standings_conference.json`;
 
-// export const getScores = date => fetch(`${corsProxy}http://data.nba.net/prod/v1/${date}/scoreboard.json`)
-export const getScores = date => fetch(`http://localhost:3000/api/scores?date=${date}`)
+export const getScores = date => fetch(`${corsProxy}http://data.nba.net/prod/v1/${date}/scoreboard.json`)
   .then(response => response.json())
   .then(data => data);
 

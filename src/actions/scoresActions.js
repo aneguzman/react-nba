@@ -13,7 +13,7 @@ export function fetchScoresData(dispatch, date){
 
     return getScores(date.format('YYYYMMDD'))
     .then( data => {
-        let games = JSON.parse(data).games;
+        let games = data.games;
         dispatch({
             type: FETCH_SCORES_DATA_COMPLETED,
             payload: {
