@@ -1,4 +1,4 @@
-export const TEAMS_INFO = [
+const TEAMS_INFO = [
   {
     isNBAFranchise: true,
     isAllStar: false,
@@ -468,3 +468,5 @@ export const TEAMS_INFO = [
     divName: 'Southeast',
   },
 ];
+
+export default TEAMS_INFO;

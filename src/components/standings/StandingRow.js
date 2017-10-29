@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { TEAMS_INFO } from '../../utils/teamsInfo';
+import TEAMS_INFO from '../../utils/teamsInfo';
 import './standings.css';
 
 const StandingRow = (props) => {

@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Spinner } from 'elemental';
 import StandingsConferenceTable from './StandingsConferenceTable';
-
 import './standings.css';
 
 class StandingsPage extends React.Component {
@@ -18,18 +17,18 @@ class StandingsPage extends React.Component {
         <h2>Standings</h2>
         { isLoading && <Spinner size="lg" /> }
         { !isLoading &&
-          <StandingsConferenceTable
-            conference="Eastern"
-            isLoading={isLoading}
-            standings={eastStandings}
-          />
-        }
-        { !isLoading &&
-          <StandingsConferenceTable
-            conference="Western"
-            isLoading={isLoading}
-            standings={westStandings}
-          />
+          <div>
+            <StandingsConferenceTable
+              conference="Western"
+              isLoading={isLoading}
+              standings={westStandings}
+            />
+            <StandingsConferenceTable
+              conference="Eastern"
+              isLoading={isLoading}
+              standings={eastStandings}
+            />
+          </div>
         }
       </div>
     );
