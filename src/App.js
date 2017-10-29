@@ -6,7 +6,7 @@ import reducers from './reducers';
 import Main from './components/Main';
 import NewsContainer from './containers/NewsContainer';
 import ScoresContainer from './containers/ScoresContainer';
-import StandingsPage from './components/standings/StandingsPage';
+import StandingsContainer from './containers/StandingsContainer';
 import StatsPage from './components/stats/StatsPage';
 
 const store = createStore(reducers);
@@ -17,7 +17,7 @@ const App = () => (
             <Switch>
                 <Route path="/feed" component={ NewsContainer }/>
                 <Route path="/scores" component={ ScoresContainer }/>
-                <Route path="/standings" component={ StandingsPage }/>
+                <Route path="/standings" component={ StandingsContainer }/>
                 <Route path="/stats" component={ StatsPage }/>
             </Switch>
         </Main>

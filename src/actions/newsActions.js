@@ -1,4 +1,4 @@
-import { getNews } from '../utils/Api';
+import { getNews } from '../utils/api';
 
 export const FETCH_NEWS_DATA_STARTED = 'FETCH_NEWS_DATA_STARTED';
 export const FETCH_NEWS_DATA_FAILED = 'FETCH_NEWS_DATA_FAILED';

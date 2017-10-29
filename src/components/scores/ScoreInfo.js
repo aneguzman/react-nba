@@ -1,6 +1,6 @@
 import React from 'react';
 import './scores.css';
-import {  Row, Col } from 'elemental';
+import { Row, Col } from 'elemental';
 import PropTypes from 'prop-types';
 
 const ScoreInfo = (props) => {

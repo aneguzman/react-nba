@@ -1,17 +1,17 @@
 import React from 'react';
-import News from './News';
 import PropTypes from 'prop-types';
+import News from './News';
 
 const NewsList = (props) => {
-    return (
-        <div>
-            { props.news.map( n => <News key={n.guid._text} {...n} /> ) }
-        </div>
-    );
+  return (
+    <div>
+      {props.news.map( n => <News key={n.guid._text} {...n} /> )}
+    </div>
+  );
 }
 
 NewsList.propTypes = {
-    news: PropTypes.array.isRequired
+  news: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
 export default NewsList;

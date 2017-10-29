@@ -14,7 +14,7 @@ const initialState = {
 const scores = (currentState = initialState, action) => {
   switch (action.type) {
     case FETCH_SCORES_DATA_STARTED:
-      return Object.assign(currentState, { isLoading: true });
+      return Object.assign({}, currentState, { isLoading: true });
     case FETCH_SCORES_DATA_COMPLETED:
       return { games: action.payload.games, isLoading: false, scoresDate: action.payload.date };
     case FETCH_SCORES_DATA_FAILED:

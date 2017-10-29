@@ -1,4 +1,4 @@
-import { getScores } from '../utils/Api';
+import { getScores } from '../utils/api';
 import moment from 'moment';
 
 export const FETCH_SCORES_DATA_STARTED = 'FECTH_SCORES_DATA_STARTED';

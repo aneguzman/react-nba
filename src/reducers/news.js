@@ -12,7 +12,7 @@ const initialState = {
 const news = (currentState = initialState, action) => {
   switch (action.type) {
     case FETCH_NEWS_DATA_STARTED:
-      return Object.assign(currentState, { isLoading: true });
+      return Object.assign({}, currentState, { isLoading: true });
     case FETCH_NEWS_DATA_COMPLETED:
       return { news: action.payload.news, isLoading: false };
     case FETCH_NEWS_DATA_FAILED:

@@ -1,38 +1,31 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import NewsList from './NewsList';
-let convert = require('xml-js');
 import PropTypes from 'prop-types';
-import { fetchNewsData } from '../../actions/newsActions';
-
-@connect((store) => {
-    return {
-        news: store.news.news,
-        isLoading: store.news.isLoading
-    }
-})
+import { Spinner } from 'elemental';
 
 class NewsFeedPage extends React.Component{
-    constructor(props){
-        super(props);
-    }
 
-    componentWillMount(){
-        this.getNews();
-    } 
+  componentWillMount() {
+    const { fetchNewsData, isLoading } = this.props;
+    if(!isLoading) fetchNewsData();
+  } 
 
-    getNews(){
-        fetchNewsData(this.props.dispatch);
-    }
-
-    render(){
-        return (
-            <div>
-                <h1>Feed</h1>
-                <NewsList news={this.props.news} />
-            </div>
-        ); 
-    }
+  render() {
+    const { isLoading, news } = this.props;
+    return (
+      <div>
+        <h1>Feed</h1>
+        { isLoading && <Spinner size='lg' /> }
+        { !isLoading && <NewsList news={ news } /> }
+      </div>
+    ); 
+  }
 }
+
+NewsFeedPage.propTypes = {
+  fetchNewsData: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  news: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default NewsFeedPage;
