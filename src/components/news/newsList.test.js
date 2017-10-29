@@ -1,6 +1,6 @@
 import React from 'react';
 import expect from 'expect';
-import { mount, shallow } from 'enzyme';
+import { shallow } from 'enzyme';
 import NewsList from './NewsList';
 
 describe('<NewsList/>', () => {
@@ -12,33 +12,32 @@ describe('<NewsList/>', () => {
     };
   });
 
-  it('should have a div', function () {
-    const wrapper = shallow(<NewsList {...props}/>);
+  it('should have a div', () => {
+    const wrapper = shallow(<NewsList {...props} />);
     expect(wrapper.find('div').length).toBeGreaterThan(0);
   });
 
-  it('should have props for news', function () {
-    const wrapper = shallow(<NewsList {...props}/>);
-    expect(wrapper.props.news).toExist;
+  it('should have props for news', () => {
+    const wrapper = shallow(<NewsList {...props} />);
+    expect(wrapper.unrendered.props.news).toExist();
   });
 
-  it('should have news array with no childs', function () {
+  it('should have news array with no childs', () => {
     props.news = [];
-    const wrapper = shallow(<NewsList {...props}/>);
+    const wrapper = shallow(<NewsList {...props} />);
     expect(wrapper.unrendered.props.news).toEqual([]);
   });
 
-  it('should call map function', function () {
-    var news = [{
+  it('should call map function', () => {
+    const news = [{
       guid: {
         text: '34234234',
       },
       pubDate: {},
-      title: {}
+      title: {},
     }];
     props.news = news;
-    const wrapper = shallow(<NewsList {...props}/>);
+    const wrapper = shallow(<NewsList {...props} />);
     expect(wrapper.unrendered.props.news).toEqual(news);
   });
-  
 });

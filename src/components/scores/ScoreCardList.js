@@ -1,17 +1,15 @@
 import React from 'react';
-import ScoreCard from './ScoreCard';
 import PropTypes from 'prop-types';
+import ScoreCard from './ScoreCard';
 
-const ScoreCardList = (props) => {
-    return (
-      <div>
-            {props.games.map( game => <ScoreCard key={game.gameId} {...game} /> )}
-      </div>
-    )
-  }
+const ScoreCardList = props => (
+  <div>
+    {props.games.map(game => <ScoreCard key={game.gameId} {...game} />)}
+  </div>
+);
 
-ScoreCardList.PropTypes = {
-  games: PropTypes.array
-}
+ScoreCardList.propTypes = {
+  games: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default ScoreCardList;

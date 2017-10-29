@@ -1,5 +1,5 @@
 export const TEAMS_INFO = [
-  {  
+  {
     isNBAFranchise: true,
     isAllStar: false,
     city: 'Atlanta',
@@ -12,7 +12,7 @@ export const TEAMS_INFO = [
     confName: 'East',
     divName: 'Southeast',
   },
-  {  
+  {
     isNBAFranchise: true,
     isAllStar: false,
     city: 'Boston',
@@ -25,7 +25,7 @@ export const TEAMS_INFO = [
     confName: 'East',
     divName: 'Atlantic',
   },
-  {  
+  {
     isNBAFranchise: false,
     isAllStar: false,
     city: 'Brisbane',
@@ -38,7 +38,7 @@ export const TEAMS_INFO = [
     confName: 'Intl',
     divName: '',
   },
-  {  
+  {
     isNBAFranchise: true,
     isAllStar: false,
     city: 'Brooklyn',
@@ -51,7 +51,7 @@ export const TEAMS_INFO = [
     confName: 'East',
     divName: 'Atlantic',
   },
-  {  
+  {
     isNBAFranchise: true,
     isAllStar: false,
     city: 'Charlotte',
@@ -64,7 +64,7 @@ export const TEAMS_INFO = [
     confName: 'East',
     divName: 'Southeast',
   },
-  {  
+  {
     isNBAFranchise: true,
     isAllStar: false,
     city: 'Chicago',
@@ -77,7 +77,7 @@ export const TEAMS_INFO = [
     confName: 'East',
     divName: 'Central',
   },
-  {  
+  {
     isNBAFranchise: true,
     isAllStar: false,
     city: 'Cleveland',
@@ -90,7 +90,7 @@ export const TEAMS_INFO = [
     confName: 'East',
     divName: 'Central',
   },
-  {  
+  {
     isNBAFranchise: true,
     isAllStar: false,
     city: 'Dallas',
@@ -103,7 +103,7 @@ export const TEAMS_INFO = [
     confName: 'West',
     divName: 'Southwest',
   },
-  {  
+  {
     isNBAFranchise: true,
     isAllStar: false,
     city: 'Denver',
@@ -116,7 +116,7 @@ export const TEAMS_INFO = [
     confName: 'West',
     divName: 'Northwest',
   },
-  {  
+  {
     isNBAFranchise: true,
     isAllStar: false,
     city: 'Detroit',
@@ -129,7 +129,7 @@ export const TEAMS_INFO = [
     confName: 'East',
     divName: 'Central',
   },
-  {  
+  {
     isNBAFranchise: true,
     isAllStar: false,
     city: 'Golden State',
@@ -142,7 +142,7 @@ export const TEAMS_INFO = [
     confName: 'West',
     divName: 'Pacific',
   },
-  {  
+  {
     isNBAFranchise: false,
     isAllStar: false,
     city: 'Guangzhou',
@@ -155,7 +155,7 @@ export const TEAMS_INFO = [
     confName: 'Intl',
     divName: '',
   },
-  {  
+  {
     isNBAFranchise: false,
     isAllStar: false,
     city: 'Haifa',
@@ -168,7 +168,7 @@ export const TEAMS_INFO = [
     confName: 'Intl',
     divName: '',
   },
-  {  
+  {
     isNBAFranchise: true,
     isAllStar: false,
     city: 'Houston',
@@ -181,7 +181,7 @@ export const TEAMS_INFO = [
     confName: 'West',
     divName: 'Southwest',
   },
-  {  
+  {
     isNBAFranchise: true,
     isAllStar: false,
     city: 'Indiana',
@@ -194,7 +194,7 @@ export const TEAMS_INFO = [
     confName: 'East',
     divName: 'Central',
   },
-  {  
+  {
     isNBAFranchise: true,
     isAllStar: false,
     city: 'LA',
@@ -207,7 +207,7 @@ export const TEAMS_INFO = [
     confName: 'West',
     divName: 'Pacific',
   },
-  {  
+  {
     isNBAFranchise: true,
     isAllStar: false,
     city: 'Los Angeles',
@@ -220,7 +220,7 @@ export const TEAMS_INFO = [
     confName: 'West',
     divName: 'Pacific',
   },
-  {  
+  {
     isNBAFranchise: false,
     isAllStar: false,
     city: 'Melbourne',
@@ -233,7 +233,7 @@ export const TEAMS_INFO = [
     confName: 'Intl',
     divName: '',
   },
-  {  
+  {
     isNBAFranchise: true,
     isAllStar: false,
     city: 'Memphis',
@@ -246,7 +246,7 @@ export const TEAMS_INFO = [
     confName: 'West',
     divName: 'Southwest',
   },
-  {  
+  {
     isNBAFranchise: true,
     isAllStar: false,
     city: 'Miami',
@@ -259,7 +259,7 @@ export const TEAMS_INFO = [
     confName: 'East',
     divName: 'Southeast',
   },
-  {  
+  {
     isNBAFranchise: true,
     isAllStar: false,
     city: 'Milwaukee',
@@ -272,7 +272,7 @@ export const TEAMS_INFO = [
     confName: 'East',
     divName: 'Central',
   },
-  {  
+  {
     isNBAFranchise: true,
     isAllStar: false,
     city: 'Minnesota',
@@ -285,7 +285,7 @@ export const TEAMS_INFO = [
     confName: 'West',
     divName: 'Northwest',
   },
-  {  
+  {
     isNBAFranchise: true,
     isAllStar: false,
     city: 'New Orleans',
@@ -298,7 +298,7 @@ export const TEAMS_INFO = [
     confName: 'West',
     divName: 'Southwest',
   },
-  {  
+  {
     isNBAFranchise: true,
     isAllStar: false,
     city: 'New York',
@@ -311,7 +311,7 @@ export const TEAMS_INFO = [
     confName: 'East',
     divName: 'Atlantic',
   },
-  {  
+  {
     isNBAFranchise: true,
     isAllStar: false,
     city: 'Oklahoma City',
@@ -324,7 +324,7 @@ export const TEAMS_INFO = [
     confName: 'West',
     divName: 'Northwest',
   },
-  {  
+  {
     isNBAFranchise: true,
     isAllStar: false,
     city: 'Orlando',
@@ -337,7 +337,7 @@ export const TEAMS_INFO = [
     confName: 'East',
     divName: 'Southeast',
   },
-  {  
+  {
     isNBAFranchise: true,
     isAllStar: false,
     city: 'Philadelphia',
@@ -350,7 +350,7 @@ export const TEAMS_INFO = [
     confName: 'East',
     divName: 'Atlantic',
   },
-  {  
+  {
     isNBAFranchise: true,
     isAllStar: false,
     city: 'Phoenix',
@@ -363,7 +363,7 @@ export const TEAMS_INFO = [
     confName: 'West',
     divName: 'Pacific',
   },
-  {  
+  {
     isNBAFranchise: true,
     isAllStar: false,
     city: 'Portland',
@@ -376,7 +376,7 @@ export const TEAMS_INFO = [
     confName: 'West',
     divName: 'Northwest',
   },
-  {  
+  {
     isNBAFranchise: true,
     isAllStar: false,
     city: 'Sacramento',
@@ -389,7 +389,7 @@ export const TEAMS_INFO = [
     confName: 'West',
     divName: 'Pacific',
   },
-  {  
+  {
     isNBAFranchise: true,
     isAllStar: false,
     city: 'San Antonio',
@@ -402,7 +402,7 @@ export const TEAMS_INFO = [
     confName: 'West',
     divName: 'Southwest',
   },
-  {  
+  {
     isNBAFranchise: false,
     isAllStar: false,
     city: 'Shanghai',
@@ -415,7 +415,7 @@ export const TEAMS_INFO = [
     confName: 'Intl',
     divName: '',
   },
-  {  
+  {
     isNBAFranchise: false,
     isAllStar: false,
     city: 'Sydney',
@@ -428,7 +428,7 @@ export const TEAMS_INFO = [
     confName: 'Intl',
     divName: '',
   },
-  {  
+  {
     isNBAFranchise: true,
     isAllStar: false,
     city: 'Toronto',
@@ -441,8 +441,8 @@ export const TEAMS_INFO = [
     confName: 'East',
     divName: 'Atlantic',
   },
-  {  
-    isNBAFranchise:  true,
+  {
+    isNBAFranchise: true,
     isAllStar: false,
     city: 'Utah',
     altCityName: 'Utah',
@@ -454,17 +454,17 @@ export const TEAMS_INFO = [
     confName: 'West',
     divName: 'Northwest',
   },
-  {  
-    isNBAFranchise:  true,
+  {
+    isNBAFranchise: true,
     isAllStar: false,
     city: 'Washington',
-    altCityName:'Washington',
-    fullName:'Washington Wizards',
-    tricode:'WAS',
-    teamId:'1610612764',
-    nickname:'Wizards',
-    urlName:'wizards',
-    confName:'East',
-    divName:'Southeast',
+    altCityName: 'Washington',
+    fullName: 'Washington Wizards',
+    tricode: 'WAS',
+    teamId: '1610612764',
+    nickname: 'Wizards',
+    urlName: 'wizards',
+    confName: 'East',
+    divName: 'Southeast',
   },
-]
+];

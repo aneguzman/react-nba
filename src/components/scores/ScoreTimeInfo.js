@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 import './scores.css';
 
-const ScoreTimeInfo = (props) => (
+const ScoreTimeInfo = props => (
   <span>
     { props.gameStatus === 1 ? (
       <span>
@@ -15,7 +15,7 @@ const ScoreTimeInfo = (props) => (
         <span>{ props.clock }</span>&nbsp;&nbsp;
         <span>
           { props.currentPeriod }
-          { props.currentPeriod === 1? 'st' : props.currentPeriod === 2 ? 'nd'
+          { props.currentPeriod === 1 ? 'st' : props.currentPeriod === 2 ? 'nd'
             : props.currentPeriod === 3 ? 'rd': 'th' }
         </span>
       </span>
@@ -26,10 +26,15 @@ const ScoreTimeInfo = (props) => (
   </span>
 );
 
+ScoreTimeInfo.defaultProps = {
+  startTimeET: '',
+  startTimeUTC: '',
+};
+
 ScoreTimeInfo.propTypes = {
   startTimeET: PropTypes.string,
   startTimeUTC: PropTypes.string,
-  currentPeriod: PropTypes.number,
+  currentPeriod: PropTypes.number.isRequired,
   clock: PropTypes.string.isRequired,
   gameStatus: PropTypes.number.isRequired,
 };
