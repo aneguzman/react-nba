@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import './news.css';
 
 const News = props => (
-  <div>
-    <Row className="feed">
+  <div className="feed">
+    <Row>
       <img src={props['media:content']._attributes.url} alt="" />
       <Col className="feed-date">
         <span >{moment(props.pubDate._text).format('Do MMMM YYYY')}</span>

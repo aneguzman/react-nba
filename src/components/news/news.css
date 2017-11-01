@@ -1,8 +1,15 @@
 .feed{
-    height: 400px;
-    width: 100%;
-    margin-bottom: 30px;
-    margin-left: 0 !important;
+    height: 310px;
+    width: 400px;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.feed > div{
+  width: 100%;
+  height: 100%;
 }
 .feed img{
     width: 100%;
@@ -10,10 +17,9 @@
 }
 
 .feed-title{
-    position: relative;
-    top: -122px;
-    opacity: 0.7;
-    height: 100px;
+    position: absolute;
+    top: 155px;
+    height: 50%;
     background: -webkit-linear-gradient(rgba(255,255,255,0), rgba(0,0,0,1)); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(rgba(255,255,255,0), rgba(0,0,0,1)); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(rgba(255,255,255,0), rgba(0,0,0,1)); /* For Firefox 3.6 to 15 */
@@ -22,15 +28,16 @@
 
 .feed-title h2{
     color: #fff;
-    font-size: 38px;
-    line-height: 40px;
-    margin-left: 20px;
-    margin-top: 20px;
+    font-size: 22px;
+    line-height: 32px;
+    text-align: left;
+    position: relative;
+    top: 70px;
+    margin-left: 5px;
 }
 
 .feed-date{
-    position: relative;
-    top: -100px;
+    position: absolute;
     text-align: right;
 }
 
@@ -39,7 +46,6 @@
     font-weight: bold;
     font-size: 16px;
     float:right;
+    top: 10px;
     position: relative;
-    left: -10px;
-    top:-273px;
 }

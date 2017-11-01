@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import News from './News';
 
 const NewsList = props => (
-  <div>
+  <div className="feed-container">
     {props.news.map(n => <News key={n.guid._text} {...n} />)}
   </div>
 );
