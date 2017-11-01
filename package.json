@@ -23,6 +23,7 @@
     "react-addons-css-transition-group": "^15.0.0",
     "react-datepicker": "^0.55.0",
     "react-dom": "^15.3.0",
+    "react-masonry-component": "^6.0.1",
     "react-redux": "4.4.5",
     "react-router": "2.4.0",
     "react-router-dom": "^4.2.2",
