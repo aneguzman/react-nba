@@ -5,7 +5,7 @@ import { Row } from 'elemental';
 import News from './News';
 
 const NewsList = props => {
-  const newsListItems = props.news.map(n => <News key={n.guid._text} {...n} />);
+  const newsListItems = props.news.map( (n, index) => <News index={index + 1} key={n.guid._text} {...n} />);
   return (
     <Row className="feed-container">
       <Masonry

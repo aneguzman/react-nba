@@ -4,13 +4,43 @@
 
 .feed{
     height: 310px;
-    width: 100%;
     margin-bottom: 15px;
-    position: relative;
     display: inline-block;
     margin-right: 15px;
     padding: 0 !important;
+    clear:both;
 }
+
+@media screen and (max-width: 899px){
+  div.feed.normal{
+    width: 100% !important;
+  }
+  
+  div.feed.big{
+    width: 100% !important;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1199){
+  div.feed.normal{
+    width:50% !important;
+  }
+  
+  div.feed.big{
+    width: 100% !important;
+  }
+}
+
+@media screen and (min-width: 1200px){
+  div.feed.normal{
+    width: 32% !important;
+  }
+  
+  div.feed.big{
+    width: 65% !important;
+  }
+}
+
 
 .feed img{
     width: 100%;
@@ -35,11 +65,13 @@
     position: relative;
     top: 70px;
     margin-left: 5px;
+    word-break: keep-all
 }
 
 .feed-date{
     position: absolute;
     text-align: right;
+    top: 5px;
 }
 
 .feed-date span{
