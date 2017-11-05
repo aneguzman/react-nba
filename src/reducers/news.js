@@ -2,7 +2,7 @@ import {
   FETCH_NEWS_DATA_STARTED,
   FETCH_NEWS_DATA_FAILED,
   FETCH_NEWS_DATA_COMPLETED,
-} from '../actions/newsActions';
+} from '../constants/actionTypes';
 
 const initialState = {
   isLoading: false,
@@ -14,9 +14,24 @@ const news = (currentState = initialState, action) => {
     case FETCH_NEWS_DATA_STARTED:
       return Object.assign({}, currentState, { isLoading: true });
     case FETCH_NEWS_DATA_COMPLETED:
-      return { news: action.payload.news, isLoading: false };
+      return Object.assign(
+        {},
+        currentState,
+        {
+          news: action.payload.news,
+          isLoading: false,
+        },
+      );
     case FETCH_NEWS_DATA_FAILED:
-      return { news: action.err, isLoading: false };
+      return Object.assign(
+        {},
+        currentState,
+        {
+          news: [],
+          isLoading: false,
+          error: action.payload.error,
+        },
+      );
     default: return currentState;
   }
 };

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Spinner } from 'elemental';
 import StandingsConferenceTable from './StandingsConferenceTable';
 import './standings.css';
+import Error from '../common/error';
 
 class StandingsPage extends React.Component {
   componentWillMount() {
@@ -11,7 +12,7 @@ class StandingsPage extends React.Component {
   }
 
   render() {
-    const { isLoading, eastStandings, westStandings } = this.props;
+    const { isLoading, eastStandings, westStandings, error } = this.props;
     return (
       <div>
         <h2>Standings</h2>
@@ -30,6 +31,7 @@ class StandingsPage extends React.Component {
             />
           </div>
         }
+        {!isLoading && error && <Error />}
       </div>
     );
   }

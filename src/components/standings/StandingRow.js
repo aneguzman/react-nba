@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import TEAMS_INFO from '../../utils/teamsInfo';
+import TEAMS_INFO from '../../constants/teamsInfo';
 import './standings.css';
+import { getTeamImageUrl } from '../../utils/common';
 
 const StandingRow = (props) => {
   const team = TEAMS_INFO.filter(t => t.teamId === props.teamId)[0];
-  const imgSrc = `https://cdn.nba.net/assets/logos/teams/secondary/web/${team.tricode}.svg`;
+  const imgSrc = getTeamImageUrl(team.tricode);
   return (
     <tr className="standing-row">
       <td>

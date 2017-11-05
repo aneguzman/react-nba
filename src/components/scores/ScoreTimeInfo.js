@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import './scores.css';
-
+const GAME_HAVE_NOT_STARTED = 1, GAME_STARTED = 2;
 const ScoreTimeInfo = props => (
   <span>
-    { props.gameStatus === 1 ? (
+    { props.gameStatus === GAME_HAVE_NOT_STARTED ? (
       <span>
         { props.startTimeET ? props.startTimeET.split('ET')[0]
-          : moment(props.startTimeUTC).format('hh:mm A') }
+          : moment(props.startTimeUTC).isValid() ? moment(props.startTimeUTC).format('hh:mm A') : moment().format('hh:mm A') }
       </span>
-    ) : props.gameStatus === 2 ? (
+    ) : props.gameStatus === GAME_STARTED ? (
       <span>
         <span>{ props.clock }</span>&nbsp;&nbsp;
         <span>

@@ -1,3 +1,6 @@
+/**
+ * Teams data. Used in some components to get data that is not returned by the API.
+ */
 const TEAMS_INFO = [
   {
     isNBAFranchise: true,

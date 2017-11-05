@@ -6,6 +6,7 @@ import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
 import ScoreCardList from './ScoreCardList';
 import './scores.css';
+import Error from '../common/error';
 
 class ScoresPage extends React.Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class ScoresPage extends React.Component {
 
   getScores(date) {
     const { fetchScoresData, isLoading } = this.props;
-    if (!isLoading) fetchScoresData(date);
+    if (!isLoading) fetchScoresData(date.format('YYYYMMDD'));
   }
 
   handleDatePicker(date) {
@@ -27,17 +28,18 @@ class ScoresPage extends React.Component {
   }
 
   render() {
-    const { scoresDate, games, isLoading } = this.props;
+    const { scoresDate, games, isLoading, error } = this.props;
     return (
       <div>
         <h2>NBA Scores</h2>
         <DatePicker
-          selected={scoresDate}
+          selected={moment(scoresDate)}
           onChange={this.handleDatePicker}
           className="date-picker"
         />
-        { !isLoading && <ScoreCardList games={games} /> }
-        { isLoading && <Spinner size="lg" /> }
+        {!isLoading && <ScoreCardList games={games} />}
+        {isLoading && <Spinner size="lg" />}
+        {!isLoading && error && <Error />}
       </div>
     );
   }
@@ -48,6 +50,7 @@ ScoresPage.propTypes = {
   games: PropTypes.arrayOf(PropTypes.object).isRequired,
   scoresDate: PropTypes.string.isRequired,
   isLoading: PropTypes.bool.isRequired,
+  error: PropTypes.instanceOf(object),
 };
 
 export default ScoresPage;

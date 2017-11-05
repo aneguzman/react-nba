@@ -1,14 +1,13 @@
-import moment from 'moment';
 import {
   FETCH_SCORES_DATA_STARTED,
   FETCH_SCORES_DATA_FAILED,
   FETCH_SCORES_DATA_COMPLETED,
-} from '../actions/scoresActions';
+} from '../constants/actionTypes';
 
 const initialState = {
   isLoading: false,
   games: [],
-  scoresDate: moment(),
+  scoresDate: '',
 };
 
 const scores = (currentState = initialState, action) => {
@@ -16,9 +15,26 @@ const scores = (currentState = initialState, action) => {
     case FETCH_SCORES_DATA_STARTED:
       return Object.assign({}, currentState, { isLoading: true });
     case FETCH_SCORES_DATA_COMPLETED:
-      return { games: action.payload.games, isLoading: false, scoresDate: action.payload.date };
+      return Object.assign(
+        {},
+        currentState,
+        {
+          games: action.payload.games,
+          isLoading: false,
+          scoresDate: action.payload.date,
+        },
+      );
     case FETCH_SCORES_DATA_FAILED:
-      return { games: action.err, isLoading: false, scoresDate: action.payload.date };
+      return Object.assign(
+        {},
+        currentState,
+        {
+          games: [],
+          isLoading: false,
+          scoresDate: action.payload.date,
+          error: action.payload.error,
+        },
+      );
     default: return currentState;
   }
 };

@@ -5,12 +5,7 @@ import StandingRowList from './StandingRowList';
 import './standings.css';
 
 const StandingsConferenceTable = (props) => {
-  let body = null;
-  if (props.standings) {
-    body = <StandingRowList standings={props.standings} />;
-  } else {
-    body = <tbody />;
-  }
+  const body = props.standings ? <StandingRowList standings={props.standings} /> : <tbody />;
   return (
     <Table className="standings-table">
       <colgroup>

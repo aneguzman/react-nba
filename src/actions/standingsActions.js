@@ -1,31 +1,19 @@
 import { getStandings } from '../utils/api';
-
-export const FETCH_STANDINGS_DATA_STARTED = 'FETCH_STANDINGS_DATA_STARTED';
-export const FETCH_STANDINGS_DATA_COMPLETED = 'FETCH_STANDINGS_DATA_COMPLETED';
-export const FETCH_STANDINGS_DATA_FAILED = 'FETCH_STANDINGS_DATA_FAILED';
+import {
+  fetchStandingsDataCompleted,
+  fetchStandingsDataFailed,
+  fetchStandingsDataStarted
+} from './standingsActionCreators';
 
 export function fetchStandingsData (dispatch) {
-  dispatch({
-    type: FETCH_STANDINGS_DATA_STARTED,
-    payload: '',
-  });
+  dispatch(fetchStandingsDataStarted());
   return getStandings()
     .then((data) => {
-      dispatch({
-        type: FETCH_STANDINGS_DATA_COMPLETED,
-        payload: {
-          eastStandings: data.league.standard.conference.east,
-          westStandings: data.league.standard.conference.west,
-        },
-      });
+      const eastStandings = data.league.standard.conference.east;
+      const westStandings = data.league.standard.conference.west;
+      dispatch(fetchStandingsDataCompleted(eastStandings, westStandings));
     })
     .catch((err) => {
-      dispatch({
-        type: FETCH_STANDINGS_DATA_FAILED,
-        payload: {
-          error: err
-        },
-        isError: true,
-      });
+      dispatch(fetchStandingsDataFailed(err));
     });
 }

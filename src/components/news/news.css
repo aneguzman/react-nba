@@ -49,8 +49,12 @@
 
 .feed-title{
     position: absolute;
-    top: 155px;
-    height: 50%;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    min-height: 86px;
     background: -webkit-linear-gradient(rgba(255,255,255,0), rgba(0,0,0,1)); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(rgba(255,255,255,0), rgba(0,0,0,1)); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(rgba(255,255,255,0), rgba(0,0,0,1)); /* For Firefox 3.6 to 15 */
@@ -62,8 +66,7 @@
     font-size: 22px;
     line-height: 32px;
     text-align: left;
-    position: relative;
-    top: 70px;
+    position: absolute;
     margin-left: 5px;
     word-break: keep-all
 }

@@ -2,7 +2,7 @@ import {
   FETCH_STANDINGS_DATA_STARTED,
   FETCH_STANDINGS_DATA_FAILED,
   FETCH_STANDINGS_DATA_COMPLETED,
-} from '../actions/standingsActions';
+} from '../constants/actionTypes';
 
 const initialState = {
   isLoading: false,

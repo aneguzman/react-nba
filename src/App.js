@@ -12,16 +12,16 @@ import StatsPage from './components/stats/StatsPage';
 const store = createStore(reducers);
 
 const App = () => (
-    <Provider store={ store }>
-        <Main>
-            <Switch>
-                <Route path="/feed" component={ NewsContainer }/>
-                <Route path="/scores" component={ ScoresContainer }/>
-                <Route path="/standings" component={ StandingsContainer }/>
-                <Route path="/stats" component={ StatsPage }/>
-            </Switch>
-        </Main>
-    </Provider>
+  <Provider store={store}>
+    <Main>
+      <Switch>
+        <Route path="/feed" component={NewsContainer} />
+        <Route path="/scores" component={ScoresContainer} />
+        <Route path="/standings" component={StandingsContainer} />
+        <Route path="/stats" component={StatsPage} />
+      </Switch>
+    </Main>
+  </Provider>
 );
 
 export default App;
