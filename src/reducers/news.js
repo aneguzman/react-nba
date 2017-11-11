@@ -7,6 +7,8 @@ import {
 const initialState = {
   isLoading: false,
   news: [],
+  isError: false,
+  page: 1,
 };
 
 const news = (currentState = initialState, action) => {
@@ -30,6 +32,7 @@ const news = (currentState = initialState, action) => {
           news: [],
           isLoading: false,
           error: action.payload.error,
+          isError: true
         },
       );
     default: return currentState;
