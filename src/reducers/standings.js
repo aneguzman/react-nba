@@ -8,6 +8,7 @@ const initialState = {
   isLoading: false,
   eastStandings: [],
   westStandings: [],
+  isError: false,
 };
 
 const standings = (currentState = initialState, action) => {
@@ -26,11 +27,13 @@ const standings = (currentState = initialState, action) => {
     case FETCH_STANDINGS_DATA_FAILED:
       return Object.assign(
         {},
+        currentState,
         {
           eastStandings: [],
           westStandings: [],
           isLoading: false,
-          error: action.payload.error,
+          error: action.payload.error.typeError,
+          isError: true,
         });
     default: return currentState;
   }

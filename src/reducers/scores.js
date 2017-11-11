@@ -35,8 +35,8 @@ const scores = (currentState = initialState, action) => {
           games: [],
           isLoading: false,
           scoresDate: action.payload.date,
-          error: action.payload.error,
-          isError: true
+          error: action.payload.error.typeError,
+          isError: true,
         },
       );
     default: return currentState;

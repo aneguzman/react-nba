@@ -34,10 +34,11 @@ export const fetchScoresDataStarted = () => ({
  * @param {*} err - the error obj returned by the ajax call.
  * @return {*} - the action to be dispatched.
  */
-export const fetchScoresDataFailed = (err) => ({
+export const fetchScoresDataFailed = (error, date) => ({
   type: FETCH_SCORES_DATA_FAILED,
   payload: {
-    error: err
+    error,
+    date
   },
 });
 

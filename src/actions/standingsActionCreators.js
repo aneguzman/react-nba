@@ -34,10 +34,10 @@ export const fetchStandingsDataStarted = () => ({
  * @param {*} err - the error obj returned by the ajax call.
  * @return {*} - the action to be dispatched.
  */
-export const fetchStandingsDataFailed = (err) => ({
+export const fetchStandingsDataFailed = (error) => ({
   type: FETCH_STANDINGS_DATA_FAILED,
   payload: {
-    error: err
+    error
   },
 });
 

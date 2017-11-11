@@ -14,12 +14,12 @@ class StandingsPage extends React.Component {
   }
 
   render() {
-    const { isLoading, eastStandings, westStandings, error } = this.props;
+    const { isLoading, eastStandings, westStandings, isError } = this.props;
     return (
       <div>
         <h2>Standings</h2>
         { isLoading && <Spinner size="lg" /> }
-        { !isLoading &&
+        { !isLoading && !isError &&
           <div>
             <StandingsConferenceTable
               conference={WESTERN}
@@ -33,18 +33,22 @@ class StandingsPage extends React.Component {
             />
           </div>
         }
-        {!isLoading && error && <Error />}
+        {!isLoading && isError && <Error />}
       </div>
     );
   }
 }
+
+StandingsPage.defaultProps = {
+  isError: false,
+};
 
 StandingsPage.propTypes = {
   isLoading: PropTypes.bool.isRequired,
   eastStandings: PropTypes.arrayOf(PropTypes.object).isRequired,
   westStandings: PropTypes.arrayOf(PropTypes.object).isRequired,
   fetchStandingsData: PropTypes.func.isRequired,
-  error: PropTypes.instanceOf(PropTypes.object),
+  isError: PropTypes.bool,
 };
 
 export default StandingsPage;

@@ -37,12 +37,45 @@ export const getPeriodSufix = (period) => {
     case GAME_PERIOD.FOURTH:
       return PERIOD_SUFIX.FOURTH;
     default: 
-    return PERIOD_SUFIX.FIRST;
+      return PERIOD_SUFIX.FIRST;
   }
 };
+  
+/**
+ * Handle request errors.
+ * @param {Promise} - response - The response of the API
+ * @return {Promise} - The response promise.
+ */
+export const handleFetchResponse = (response) => {
+  if (!response.ok) {
+    throw Error(response.statusText);
+  }
+  return response;
+};
+
+/**
+ * Throws error.
+ * @param {string} - error - The response error status text.
+ */
+export const throwResponseError = (error) => {
+  throw Error(error);
+};
+
+/**
+ * Fetch wrapper to handle request errors.
+ * @param {string} - url - The url of the request.
+ * @return {Promise} - The response promise.
+ */
+export const getUrl = (url) => {
+  return fetch(url)
+  .then(response => handleFetchResponse(response))
+  .catch(error => throwResponseError(error));
+};
+
 
 export default {
   getFeedItemClass,
   getFormattedDate,
   getPeriodSufix,
+  getUrl,
 };

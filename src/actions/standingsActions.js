@@ -1,3 +1,4 @@
+import get from 'lodash/get';
 import { getStandings } from '../utils/api';
 import {
   fetchStandingsDataCompleted,
@@ -9,11 +10,11 @@ export function fetchStandingsData (dispatch) {
   dispatch(fetchStandingsDataStarted());
   return getStandings()
     .then((data) => {
-      const eastStandings = data.league.standard.conference.east; // _.get(data, 'league.standard.conference.east', []);
-      const westStandings = data.league.standard.conference.west;
+      const eastStandings = get(data, 'league.standard.conference.east', []);
+      const westStandings = get(data, 'league.standard.conference.west', []);
       dispatch(fetchStandingsDataCompleted(eastStandings, westStandings));
     })
-    .catch((err) => {
-      dispatch(fetchStandingsDataFailed(err));
+    .catch((error) => {
+      dispatch(fetchStandingsDataFailed(error));
     });
 }

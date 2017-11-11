@@ -8,9 +8,10 @@ import {
 export function fetchScoresData(dispatch, date){
   dispatch(fetchScoresDataStarted());
   return getScores(date)
-    .then( ({ games }) => {
+    .then(({ games }) => {
       dispatch(fetchScoresDataCompleted(games, date));
-    }).catch( err => {
-      dispatch(fetchScoresDataFailed(err));
+    })
+    .catch((error) => {
+      dispatch(fetchScoresDataFailed(error, date));
     });
 }
