@@ -3,11 +3,14 @@ import {
   FETCH_SCORES_DATA_FAILED,
   FETCH_SCORES_DATA_COMPLETED,
 } from '../constants/actionTypes';
+import { API_DATE_FORMAT } from '../constants/constants';
+import { getFormattedDate } from '../utils/common';
 
 const initialState = {
   isLoading: false,
   games: [],
-  scoresDate: '',
+  scoresDate: getFormattedDate(API_DATE_FORMAT),
+  isError: false,
 };
 
 const scores = (currentState = initialState, action) => {
@@ -33,6 +36,7 @@ const scores = (currentState = initialState, action) => {
           isLoading: false,
           scoresDate: action.payload.date,
           error: action.payload.error,
+          isError: true
         },
       );
     default: return currentState;

@@ -3,23 +3,24 @@ import { Table } from 'elemental';
 import PropTypes from 'prop-types';
 import StandingRowList from './StandingRowList';
 import './standings.css';
+import { TABLE_HEADER_WIDTH } from '../../constants/constants';
 
-const StandingsConferenceTable = (props) => {
-  const body = props.standings ? <StandingRowList standings={props.standings} /> : <tbody />;
+const StandingsConferenceTable = ({ standings, conference }) => {
+  const body = standings ? <StandingRowList standings={standings} /> : <tbody />;
   return (
     <Table className="standings-table">
       <colgroup>
-        <col width="40%" />
-        <col width="20%" />
-        <col width="20%" />
-        <col width="20%" />
+        <col width={TABLE_HEADER_WIDTH.WIDE} />
+        <col width={TABLE_HEADER_WIDTH.NORMAL} />
+        <col width={TABLE_HEADER_WIDTH.NORMAL} />
+        <col width={TABLE_HEADER_WIDTH.NORMAL} />
       </colgroup>
       <thead>
         <tr>
-          <th>{props.conference}</th>
-          <th>W-L</th>
-          <th>PCT</th>
-          <th>GB</th>
+          <th className="standings-table__th">{conference}</th>
+          <th className="standings-table__th">W-L</th>
+          <th className="standings-table__th">PCT</th>
+          <th className="standings-table__th">GB</th>
         </tr>
       </thead>
       {body}

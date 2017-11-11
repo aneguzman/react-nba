@@ -4,7 +4,7 @@ import NewsFeedPage from '../components/news/NewsFeedPage';
 
 const mapStateToProps = ({ news }) => news;
 const mapDispatchToProps = dispatch => ({
-  fetchNewsData: () => fetchNewsData(dispatch),
+  fetchNewsData: page => fetchNewsData(dispatch, page),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewsFeedPage);

@@ -1,4 +1,4 @@
-#header{
+.header{
     width: 100%;
     background-color: #333;
     min-height: 50px;
@@ -9,20 +9,20 @@
     max-height: 100px;
 }
 
-.nba-logo > img{
+.header__nba-logo{
     width: 150px;
     height: 150px;
     position: relative;
     top: -27px;
 }
 
-#header nav{
+.header__nav{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
 }
 
-nav > a{
+.header__nav-anchor{
     display: inline-block;
     padding: 15px 0px;;
     font-size: 14px;
@@ -30,22 +30,22 @@ nav > a{
     text-transform: uppercase;
 }
 
-nav > a:after{
+.header__nav-anchor:after{
   content: '|';
   color: #fff;
   padding: 15px;
 }
 
-nav > a:last-of-type:after{
+.header__nav-anchor:last-of-type:after{
   content: '';
 }
 
-nav > a.active{
+.header__nav-anchor.active{
     color: #3371c0;
     text-decoration: none;
 }
 
-nav > a:hover{
+.header__nav-anchor:hover{
     color: #fff;
     text-decoration: none;
 }

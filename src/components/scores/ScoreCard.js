@@ -7,7 +7,7 @@ import './scores.css';
 
 const ScoreCard = props => (
   <Card className="card">
-    <Row className="time-quarter-placeholder">
+    <Row className="card__time-quarter-placeholder">
       <Col sm="1">
         <ScoreTimeInfo
           gameStatus={props.statusNum}

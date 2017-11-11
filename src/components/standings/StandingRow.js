@@ -2,20 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TEAMS_INFO from '../../constants/teamsInfo';
 import './standings.css';
-import { getTeamImageUrl } from '../../utils/common';
+import { getTeamImageUrl } from '../../constants/constants';
+import { DEFAULT_TEAM } from '../../constants/constants';
 
 const StandingRow = (props) => {
-  const team = TEAMS_INFO.filter(t => t.teamId === props.teamId)[0];
+  const teamArr = TEAMS_INFO.filter(t => t.teamId === props.teamId);
+  const team = teamArr && teamArr.length > 0 ? teamArr[0] : DEFAULT_TEAM;
   const imgSrc = getTeamImageUrl(team.tricode);
   return (
-    <tr className="standing-row">
-      <td>
-        <img src={imgSrc} alt="" />
+    <tr className="standings-table__tr">
+      <td className="standings-table__td">
+        <img src={imgSrc} alt="Team logo" />
         {team.city}
       </td>
-      <td>{props.win} - {props.loss}</td>
-      <td>{props.winPct}</td>
-      <td>{props.gamesBehind}</td>
+      <td className="standings-table__td">{props.win} - {props.loss}</td>
+      <td className="standings-table__td">{props.winPct}</td>
+      <td className="standings-table__td">{props.gamesBehind}</td>
     </tr>
   );
 };

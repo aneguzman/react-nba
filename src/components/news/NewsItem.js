@@ -3,26 +3,32 @@ import { Col } from 'elemental';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import './news.css';
+import { getFeedItemClass } from '../../utils/common';
 
-const NewsItem = (props) => {
-  const feedClass = props.index % 3 == 0 ? 'feed big' : 'feed normal';
+const NewsItem = ({ index, pubDate, title, thumbnail }) => {
+  const feedClass = getFeedItemClass(index);
+  const pubDateMoment = moment(pubDate);
+  const date = pubDateMoment.isValid() ? pubDateMoment.format('Do MMMM YYYY') : moment().format('Do MMMM YYYY');
   return (
     <Col className={feedClass}>
-      <img src={props.media.attributes.url} alt="" />
-      <Col className="feed-date">
-        <span >{moment(props.pubDate.text).isValid() ? moment(props.pubDate.text).format('Do MMMM YYYY') : moment().format('Do MMMM YYYY')}</span>
+      <img className="feed__img" src={thumbnail} alt={title} />
+      <Col className="feed__date">
+        <span className="feed__date-span">
+          {date}
+        </span>
       </Col>
-      <Col className="feed-title">
-        <h2>{props.title.text}</h2>
+      <Col className="feed__title">
+        <h2 className="feed__title-h2">{title}</h2>
       </Col>
     </Col>
   );
-}
+};
 
 NewsItem.propTypes = {
-  title: PropTypes.instanceOf(Object).isRequired,
-  pubDate: PropTypes.instanceOf(Object).isRequired,
-  media: PropTypes.instanceOf(Object).isRequired,
+  title: PropTypes.string.isRequired,
+  pubDate: PropTypes.string.isRequired,
+  thumbnail: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
 };
 
 export default NewsItem;

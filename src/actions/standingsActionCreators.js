@@ -6,9 +6,9 @@ import {
 
 /**
  * Action creator for fetch standings data completed action.
- * @param {*} eastStandings - The array of east conference standings.
- * @param {*} westStandings - The array of west conference standings.
- * @return {*} the action to be dispatched.
+ * @param {array} eastStandings - The array of east conference standings.
+ * @param {array} westStandings - The array of west conference standings.
+ * @return {object} the action to be dispatched.
  */
 export const fetchStandingsDataCompleted = (eastStandings, westStandings) => ({
   type: FETCH_STANDINGS_DATA_COMPLETED,

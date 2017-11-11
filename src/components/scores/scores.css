@@ -7,33 +7,33 @@
     display: inline-block;
 }
 
-.time-quarter-placeholder{
+.card__time-quarter-placeholder{
     text-align: right;
     padding-bottom: 8px;
     font-weight: bold;
-}
-
-.team-logo > img{
-    width: 38px;
-    position: relative;
-    top: -3px;
-    padding-right: 5px;
-}
-
-.team-name{
-    font-size: 16px;
 }
 
 .score-info{
     padding: 5px;
 }
 
-.score{
+.score-info__logo{
+  width: 38px;
+  position: relative;
+  top: -3px;
+  padding-right: 5px;
+}
+
+.score-info__team-name{
+  font-size: 16px;
+}
+
+.score-info__score{
     font-size: 18px;
     text-align: right;
     font-weight: 500;
 }
 
 .date-picker{
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }

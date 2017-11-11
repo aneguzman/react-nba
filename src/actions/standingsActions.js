@@ -9,7 +9,7 @@ export function fetchStandingsData (dispatch) {
   dispatch(fetchStandingsDataStarted());
   return getStandings()
     .then((data) => {
-      const eastStandings = data.league.standard.conference.east;
+      const eastStandings = data.league.standard.conference.east; // _.get(data, 'league.standard.conference.east', []);
       const westStandings = data.league.standard.conference.west;
       dispatch(fetchStandingsDataCompleted(eastStandings, westStandings));
     })

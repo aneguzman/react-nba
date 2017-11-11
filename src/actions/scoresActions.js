@@ -8,8 +8,7 @@ import {
 export function fetchScoresData(dispatch, date){
   dispatch(fetchScoresDataStarted());
   return getScores(date)
-    .then( data => {
-      const games = data.games;
+    .then( ({ games }) => {
       dispatch(fetchScoresDataCompleted(games, date));
     }).catch( err => {
       dispatch(fetchScoresDataFailed(err));

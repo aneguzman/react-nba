@@ -23,4 +23,31 @@ export const PERIOD_SUFIX = {
   THIRD: 'rd',
   FOURTH: 'th',
 }
+export const DEFAULT_TEAM = {
+  tricode: 'CLE',
+}
+export const TABLE_HEADER_WIDTH = {
+  NORMAL: '20%',
+  WIDE: '40%',
+}
 
+/**
+ * Gets the team image url
+ * @param {string} - teamTriCode - The team name in three characters.
+ * @return {string} - the image url.
+ */
+export const getTeamImageUrl = teamTriCode => (teamTriCode ? `https://cdn.nba.net/assets/logos/teams/secondary/web/${teamTriCode}.svg` : '');
+
+/**
+ * Gets scores api url
+ * @param {string} - corsProxyUrl - The proxy url.
+ * @param {string} - date - The date of the scores to be fetched.
+ * @return {string} - the formatted scores api url.
+ */
+export const getScoresApiUrl = date => `http://localhost:9000/api/scores?date=${date}`;
+/**
+ * Gets standings api url
+ * @param {string} - corsProxyUrl - The proxy url.
+ * @return {string} - the formatted standings api url.
+ */
+export const getStandingsApiUrl = () => 'http://localhost:9000/api/standings';

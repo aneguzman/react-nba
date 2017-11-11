@@ -3,17 +3,18 @@ import { Link } from 'react-router-dom';
 import { Row, Col } from 'elemental';
 import './header.css';
 import logoImg from '../../../public/images/nba_react_logo_blue.png';
+
 const Header = () => (
-  <Row id="header">
-    <Col sm="1/6" className="nba-logo">
-      <img src={logoImg} /> 
+  <Row className="header">
+    <Col sm="1/6">
+      <img src={logoImg} className="header__nba-logo" /> 
     </Col>
     <Col sm="5/6">
-      <nav>
-        <Link to="/feed" className="active">Feed</Link>
-        <Link to="/scores" className="active">Scores</Link>
-        <Link to="/standings" className="active">Standings</Link>
-        <Link to="/stats" className="active">Stats</Link>
+      <nav className="header__nav">
+        <Link to="/feed" className="header__nav-anchor">Feed</Link>
+        <Link to="/scores" className="header__nav-anchor">Scores</Link>
+        <Link to="/standings" className="header__nav-anchor">Standings</Link>
+        <Link to="/stats" className="header__nav-anchor">Stats</Link>
       </nav>
     </Col>
   </Row>

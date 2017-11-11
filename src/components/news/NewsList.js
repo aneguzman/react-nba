@@ -3,16 +3,21 @@ import PropTypes from 'prop-types';
 import Masonry from 'react-masonry-component';
 import { Row } from 'elemental';
 import NewsItem from './NewsItem';
-import { MEDIA_CONTENT } from '../../constants/constants';
 
-const NewsList = (props) => {
-  const newsListItems = props.news.map( (n, index) => 
-    <NewsItem index={index + 1} key={n.guid.text} media={n[MEDIA_CONTENT]} {...n} />
+const NewsList = ({ news }) => {
+  const newsListItems = news.map((newsItem, index) => (
+      <NewsItem 
+        index={index + 1} 
+        key={index} 
+        {...newsItem} 
+      />
+    )
   );
+  
   return (
     <Row className="feed-container">
       <Masonry
-        className={'my-gallery-class'}
+        className="feed-container__my-gallery"
         disableImagesLoaded={false}
         updateOnEachImageLoad={false}
       >

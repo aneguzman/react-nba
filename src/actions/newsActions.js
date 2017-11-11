@@ -5,12 +5,13 @@ import {
   fetchNewsDataStarted
 } from './newsActionCreators';
   
-export function fetchNewsData(dispatch){
+export function fetchNewsData(dispatch, page){
   dispatch(fetchNewsDataStarted());
-  return getNews()
+  return getNews(page)
   .then( data => {
     dispatch(fetchNewsDataCompleted(data));
-  }).catch( err => {
+  })
+  .catch( err => {
     dispatch(fetchNewsDataFailed(err));
   });
 }
