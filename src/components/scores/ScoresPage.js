@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import DatePicker from 'react-datepicker';
-import { Spinner } from 'elemental';
 import moment from 'moment';
+import { Spinner } from 'elemental';
 import 'react-datepicker/dist/react-datepicker.css';
 import ScoreCardList from './ScoreCardList';
-import './scores.css';
 import Error from '../common/error';
+import { API_DATE_FORMAT } from '../../constants/constants';
+import './scores.css';
 
 class ScoresPage extends React.Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class ScoresPage extends React.Component {
 
   getScores(date) {
     const { fetchScoresData, isLoading } = this.props;
-    if (!isLoading) fetchScoresData(date.format('YYYYMMDD'));
+    if (!isLoading) fetchScoresData(date.format(API_DATE_FORMAT));
   }
 
   handleDatePicker(date) {
@@ -28,7 +29,7 @@ class ScoresPage extends React.Component {
   }
 
   render() {
-    const { scoresDate, games, isLoading, error } = this.props;
+    const { scoresDate, games, isLoading, isError } = this.props;
     return (
       <div>
         <h2>NBA Scores</h2>
@@ -39,18 +40,22 @@ class ScoresPage extends React.Component {
         />
         {!isLoading && <ScoreCardList games={games} />}
         {isLoading && <Spinner size="lg" />}
-        {!isLoading && error && <Error />}
+        {!isLoading && isError && <Error />}
       </div>
     );
   }
 }
+
+ScoresPage.defaultProps = {
+  isError: false,
+};
 
 ScoresPage.propTypes = {
   fetchScoresData: PropTypes.func.isRequired,
   games: PropTypes.arrayOf(PropTypes.object).isRequired,
   scoresDate: PropTypes.string.isRequired,
   isLoading: PropTypes.bool.isRequired,
-  error: PropTypes.instanceOf(object),
+  isError: PropTypes.bool,
 };
 
 export default ScoresPage;

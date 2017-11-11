@@ -2,26 +2,33 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import './scores.css';
-const GAME_HAVE_NOT_STARTED = 1, GAME_STARTED = 2;
+import { 
+  GAME_STATUS, 
+  GAME_PERIOD,
+  PERIOD_SUFIX,
+  DATE_TIME_FORMAT
+} from '../../constants/constants';
+import { getFormattedDate, getPeriodSufix } from '../../utils/common';
+
 const ScoreTimeInfo = props => (
   <span>
-    { props.gameStatus === GAME_HAVE_NOT_STARTED ? (
+    {props.gameStatus === GAME_STATUS.NOT_STARTED &&
       <span>
-        { props.startTimeET ? props.startTimeET.split('ET')[0]
-          : moment(props.startTimeUTC).isValid() ? moment(props.startTimeUTC).format('hh:mm A') : moment().format('hh:mm A') }
+        {props.startTimeET ? props.startTimeET.split('ET')[0]
+          : getFormattedDate(DATE_TIME_FORMAT, props.startTimeUTC)}
       </span>
-    ) : props.gameStatus === GAME_STARTED ? (
+    }
+    {props.gameStatus === GAME_STATUS.STARTED &&
       <span>
-        <span>{ props.clock }</span>&nbsp;&nbsp;
+        <span>{props.clock}</span>&nbsp;&nbsp;
         <span>
-          { props.currentPeriod }
-          { props.currentPeriod === 1 ? 'st' : props.currentPeriod === 2 ? 'nd'
-            : props.currentPeriod === 3 ? 'rd': 'th' }
+          {props.currentPeriod}
+          {getPeriodSufix(props.currentPeriod)}
         </span>
       </span>
-    ) : (
+    }
+    {props.gameStatus === GAME_STATUS.ENDED &&
       <span>FINAL</span>
-    )
     }
   </span>
 );
