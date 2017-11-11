@@ -3,10 +3,10 @@ import { getStandings } from '../utils/api';
 import {
   fetchStandingsDataCompleted,
   fetchStandingsDataFailed,
-  fetchStandingsDataStarted
+  fetchStandingsDataStarted,
 } from './standingsActionCreators';
 
-export function fetchStandingsData (dispatch) {
+export const fetchStandingsData = (dispatch) => {
   dispatch(fetchStandingsDataStarted());
   return getStandings()
     .then((data) => {
@@ -17,4 +17,8 @@ export function fetchStandingsData (dispatch) {
     .catch((error) => {
       dispatch(fetchStandingsDataFailed(error));
     });
-}
+};
+
+export default {
+  fetchStandingsData,
+};

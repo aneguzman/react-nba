@@ -6,14 +6,14 @@ import NewsItem from './NewsItem';
 
 const NewsList = ({ news }) => {
   const newsListItems = news.map((newsItem, index) => (
-      <NewsItem 
-        index={index + 1} 
-        key={index} 
-        {...newsItem} 
-      />
-    )
+    <NewsItem
+      index={index + 1}
+      key={newsItem.id}
+      {...newsItem}
+    />
+  ),
   );
-  
+
   return (
     <Row className="feed-container">
       <Masonry

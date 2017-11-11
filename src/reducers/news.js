@@ -32,7 +32,7 @@ const news = (currentState = initialState, action) => {
           news: [],
           isLoading: false,
           error: action.payload.error,
-          isError: true
+          isError: true,
         },
       );
     default: return currentState;

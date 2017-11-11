@@ -2,10 +2,10 @@ import { getScores } from '../utils/api';
 import {
   fetchScoresDataCompleted,
   fetchScoresDataFailed,
-  fetchScoresDataStarted
+  fetchScoresDataStarted,
 } from './scoresActionCreators';
 
-export function fetchScoresData(dispatch, date){
+export const fetchScoresData = (dispatch, date) => {
   dispatch(fetchScoresDataStarted());
   return getScores(date)
     .then(({ games }) => {
@@ -14,4 +14,8 @@ export function fetchScoresData(dispatch, date){
     .catch((error) => {
       dispatch(fetchScoresDataFailed(error, date));
     });
-}
+};
+
+export default {
+  fetchScoresData,
+};

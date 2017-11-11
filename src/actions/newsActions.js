@@ -2,16 +2,20 @@ import { getNews } from '../utils/api';
 import {
   fetchNewsDataCompleted,
   fetchNewsDataFailed,
-  fetchNewsDataStarted
+  fetchNewsDataStarted,
 } from './newsActionCreators';
-  
-export function fetchNewsData(dispatch, page){
+
+export const fetchNewsData = (dispatch, page) => {
   dispatch(fetchNewsDataStarted());
   return getNews(page)
-  .then( data => {
-    dispatch(fetchNewsDataCompleted(data));
-  })
-  .catch( err => {
-    dispatch(fetchNewsDataFailed(err));
-  });
-}
+    .then((data) => {
+      dispatch(fetchNewsDataCompleted(data));
+    })
+    .catch((err) => {
+      dispatch(fetchNewsDataFailed(err));
+    });
+};
+
+export default {
+  fetchNewsData,
+};

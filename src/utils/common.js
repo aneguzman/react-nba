@@ -1,7 +1,7 @@
 import moment from 'moment';
-import { 
+import {
   GAME_PERIOD,
-  PERIOD_SUFIX
+  PERIOD_SUFIX,
 } from '../constants/constants';
 
 /**
@@ -9,7 +9,7 @@ import {
  * @param {string} - index - The index of the array.
  * @return {string} - the class names that will be applied to the feed item.
  */
-export const getFeedItemClass = index => index % 3 == 0 ? 'feed feed--big' : ' feed feed--normal';
+export const getFeedItemClass = index => (index % 3 === 0 ? 'feed feed--big' : ' feed feed--normal');
 
 /**
  * Returns a date formatted in an specific format.
@@ -17,9 +17,8 @@ export const getFeedItemClass = index => index % 3 == 0 ? 'feed feed--big' : ' f
  * @param {string} - date - The date to be formatted.
  * @return {string} - The date already formatted.
  */
-export const getFormattedDate = (format, date) => {
-  return date && moment(date).isValid() ? moment(date).format(format) : moment().format(format);
-};
+export const getFormattedDate = (format, date) => (date && moment(date).isValid() ?
+  moment(date).format(format) : moment().format(format));
 
 /**
  * Get period sufix
@@ -27,7 +26,7 @@ export const getFormattedDate = (format, date) => {
  * @return {string} - The sufix of the period.
  */
 export const getPeriodSufix = (period) => {
-  switch(period) {
+  switch (period) {
     case GAME_PERIOD.FIRST:
       return PERIOD_SUFIX.FIRST;
     case GAME_PERIOD.SECOND:
@@ -36,11 +35,11 @@ export const getPeriodSufix = (period) => {
       return PERIOD_SUFIX.THIRD;
     case GAME_PERIOD.FOURTH:
       return PERIOD_SUFIX.FOURTH;
-    default: 
+    default:
       return PERIOD_SUFIX.FIRST;
   }
 };
-  
+
 /**
  * Handle request errors.
  * @param {Promise} - response - The response of the API
@@ -66,11 +65,9 @@ export const throwResponseError = (error) => {
  * @param {string} - url - The url of the request.
  * @return {Promise} - The response promise.
  */
-export const getUrl = (url) => {
-  return fetch(url)
+export const getUrl = url => fetch(url)
   .then(response => handleFetchResponse(response))
   .catch(error => throwResponseError(error));
-};
 
 
 export default {

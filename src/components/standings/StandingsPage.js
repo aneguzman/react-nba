@@ -5,7 +5,8 @@ import StandingsConferenceTable from './StandingsConferenceTable';
 import './standings.css';
 import Error from '../common/error';
 
-const WESTERN = 'Western', EASTERN = 'Eastern';
+const WESTERN = 'Western';
+const EASTERN = 'Eastern';
 
 class StandingsPage extends React.Component {
   componentWillMount() {

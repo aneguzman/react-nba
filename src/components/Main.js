@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from './common/Header';
 import PropTypes from 'prop-types';
 import { BrowserRouter } from 'react-router-dom';
+import Header from './common/Header';
 
-const Main = (props) => (
+const Main = props => (
   <BrowserRouter>
     <div>
-      <Header/>
+      <Header />
       <div id="mainContent">
         {props.children}
       </div>
@@ -15,7 +15,7 @@ const Main = (props) => (
 );
 
 Main.propTypes = {
-    children: PropTypes.node,
+  children: PropTypes.node.isRequired,
 };
 
 export default Main;

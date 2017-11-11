@@ -5,10 +5,6 @@ import NewsList from './NewsList';
 import Error from '../common/error';
 
 class NewsFeedPage extends React.Component {
-  constructor(props){
-    super(props);
-  }
-
   componentWillMount() {
     const { fetchNewsData, isLoading, page } = this.props;
     if (!isLoading) fetchNewsData(page);
@@ -32,6 +28,7 @@ NewsFeedPage.propTypes = {
   isLoading: PropTypes.bool.isRequired,
   news: PropTypes.arrayOf(PropTypes.object).isRequired,
   isError: PropTypes.bool.isRequired,
+  page: PropTypes.number.isRequired,
 };
 
 export default NewsFeedPage;

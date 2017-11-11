@@ -2,8 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TEAMS_INFO from '../../constants/teamsInfo';
 import './standings.css';
-import { getTeamImageUrl } from '../../constants/constants';
-import { DEFAULT_TEAM } from '../../constants/constants';
+import {
+  getTeamImageUrl,
+  DEFAULT_TEAM,
+} from '../../constants/constants';
 
 const StandingRow = (props) => {
   const teamArr = TEAMS_INFO.filter(t => t.teamId === props.teamId);

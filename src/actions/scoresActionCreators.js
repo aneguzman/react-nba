@@ -1,7 +1,7 @@
-import { 
-  FETCH_SCORES_DATA_COMPLETED, 
-  FETCH_SCORES_DATA_STARTED, 
-  FETCH_SCORES_DATA_FAILED 
+import {
+  FETCH_SCORES_DATA_COMPLETED,
+  FETCH_SCORES_DATA_STARTED,
+  FETCH_SCORES_DATA_FAILED,
 } from '../constants/actionTypes';
 
 /**
@@ -14,7 +14,7 @@ export const fetchScoresDataCompleted = (games, date) => ({
   type: FETCH_SCORES_DATA_COMPLETED,
   payload: {
     games,
-    date
+    date,
   },
 });
 
@@ -25,7 +25,7 @@ export const fetchScoresDataCompleted = (games, date) => ({
 export const fetchScoresDataStarted = () => ({
   type: FETCH_SCORES_DATA_STARTED,
   payload: {
-    games: []
+    games: [],
   },
 });
 
@@ -38,7 +38,7 @@ export const fetchScoresDataFailed = (error, date) => ({
   type: FETCH_SCORES_DATA_FAILED,
   payload: {
     error,
-    date
+    date,
   },
 });
 

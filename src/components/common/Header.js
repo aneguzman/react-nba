@@ -7,7 +7,7 @@ import logoImg from '../../../public/images/nba_react_logo_blue.png';
 const Header = () => (
   <Row className="header">
     <Col sm="1/6">
-      <img src={logoImg} className="header__nba-logo" /> 
+      <img src={logoImg} className="header__nba-logo" alt="Header logo" />
     </Col>
     <Col sm="5/6">
       <nav className="header__nav">

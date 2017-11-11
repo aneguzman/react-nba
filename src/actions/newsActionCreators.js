@@ -1,7 +1,7 @@
-import { 
-  FETCH_NEWS_DATA_COMPLETED, 
-  FETCH_NEWS_DATA_STARTED, 
-  FETCH_NEWS_DATA_FAILED 
+import {
+  FETCH_NEWS_DATA_COMPLETED,
+  FETCH_NEWS_DATA_STARTED,
+  FETCH_NEWS_DATA_FAILED,
 } from '../constants/actionTypes';
 
 /**
@@ -9,10 +9,10 @@ import {
  * @param {*} news - The array of news.
  * @return {*} the action to be dispatched.
  */
-export const fetchNewsDataCompleted = (news) => ({
+export const fetchNewsDataCompleted = news => ({
   type: FETCH_NEWS_DATA_COMPLETED,
   payload: {
-    news
+    news,
   },
 });
 
@@ -23,7 +23,7 @@ export const fetchNewsDataCompleted = (news) => ({
 export const fetchNewsDataStarted = () => ({
   type: FETCH_NEWS_DATA_STARTED,
   payload: {
-    news: []
+    news: [],
   },
 });
 
@@ -32,10 +32,10 @@ export const fetchNewsDataStarted = () => ({
  * @param {*} err - the error obj returned by the ajax call.
  * @return {*} - the action to be dispatched.
  */
-export const fetchNewsDataFailed = (err) => ({
+export const fetchNewsDataFailed = err => ({
   type: FETCH_NEWS_DATA_FAILED,
   payload: {
-    error: err
+    error: err,
   },
 });
 

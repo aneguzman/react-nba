@@ -1,7 +1,7 @@
-import { 
-  FETCH_STANDINGS_DATA_COMPLETED, 
-  FETCH_STANDINGS_DATA_STARTED, 
-  FETCH_STANDINGS_DATA_FAILED 
+import {
+  FETCH_STANDINGS_DATA_COMPLETED,
+  FETCH_STANDINGS_DATA_STARTED,
+  FETCH_STANDINGS_DATA_FAILED,
 } from '../constants/actionTypes';
 
 /**
@@ -14,7 +14,7 @@ export const fetchStandingsDataCompleted = (eastStandings, westStandings) => ({
   type: FETCH_STANDINGS_DATA_COMPLETED,
   payload: {
     eastStandings,
-    westStandings
+    westStandings,
   },
 });
 
@@ -25,7 +25,7 @@ export const fetchStandingsDataCompleted = (eastStandings, westStandings) => ({
 export const fetchStandingsDataStarted = () => ({
   type: FETCH_STANDINGS_DATA_STARTED,
   payload: {
-    standings: []
+    standings: [],
   },
 });
 
@@ -34,10 +34,10 @@ export const fetchStandingsDataStarted = () => ({
  * @param {*} err - the error obj returned by the ajax call.
  * @return {*} - the action to be dispatched.
  */
-export const fetchStandingsDataFailed = (error) => ({
+export const fetchStandingsDataFailed = error => ({
   type: FETCH_STANDINGS_DATA_FAILED,
   payload: {
-    error
+    error,
   },
 });
 

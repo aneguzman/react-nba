@@ -1,13 +1,10 @@
 import {
-  CORS_PROXY_URL,
   NEWS_API_URL,
   getStandingsApiUrl,
-  getScoresApiUrl
+  getScoresApiUrl,
 } from '../constants/constants';
-import { 
-  handleFetchResponse,
-  throwResponseError,
-  getUrl
+import {
+  getUrl,
 } from './common';
 
 /**
@@ -23,9 +20,9 @@ export const getScores = date => getUrl(getScoresApiUrl(date))
  * Gets the list of NBA news..
  * @return {Promise} - A promise with the news data or an error object.
  */
-export const getNews = (page) => getUrl(`${NEWS_API_URL}${page}`)
+export const getNews = page => getUrl(`${NEWS_API_URL}${page}`)
   .then(response => response.json())
-  .then(data => data.articles)
+  .then(data => data.articles);
 
 /**
  * Gets the list of standings information for the east and west NBA conferences.
@@ -33,7 +30,7 @@ export const getNews = (page) => getUrl(`${NEWS_API_URL}${page}`)
  */
 export const getStandings = () => getUrl(getStandingsApiUrl())
   .then(response => response.json())
-  .then(data => JSON.parse(data))
+  .then(data => JSON.parse(data));
 
 export default {
   getScores,

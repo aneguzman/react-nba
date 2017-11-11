@@ -1,12 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import moment from 'moment';
 import './scores.css';
-import { 
-  GAME_STATUS, 
-  GAME_PERIOD,
-  PERIOD_SUFIX,
-  DATE_TIME_FORMAT
+import {
+  GAME_STATUS,
+  DATE_TIME_FORMAT,
 } from '../../constants/constants';
 import { getFormattedDate, getPeriodSufix } from '../../utils/common';
 
