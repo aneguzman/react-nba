@@ -6,8 +6,8 @@ import {
 
 /**
  * Action creator for fetch news data completed action.
- * @param {*} news - The array of news.
- * @return {*} the action to be dispatched.
+ * @param {array<Object>} news - The array of news.
+ * @return {Object} the action to be dispatched.
  */
 export const fetchNewsDataCompleted = news => ({
   type: FETCH_NEWS_DATA_COMPLETED,
@@ -18,7 +18,7 @@ export const fetchNewsDataCompleted = news => ({
 
 /**
  * Action creator for fetch news data started action.
- * @return {*} the action to be dispatched.
+ * @return {Object} the action to be dispatched.
  */
 export const fetchNewsDataStarted = () => ({
   type: FETCH_NEWS_DATA_STARTED,
@@ -29,13 +29,13 @@ export const fetchNewsDataStarted = () => ({
 
 /**
  * Action creator for fetch news data failed action.
- * @param {*} err - the error obj returned by the ajax call.
- * @return {*} - the action to be dispatched.
+ * @param {Object} error - the error obj returned by the ajax call.
+ * @return {Object} - the action to be dispatched.
  */
-export const fetchNewsDataFailed = err => ({
+export const fetchNewsDataFailed = error => ({
   type: FETCH_NEWS_DATA_FAILED,
   payload: {
-    error: err,
+    error,
   },
 });
 

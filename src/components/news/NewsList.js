@@ -11,19 +11,22 @@ const NewsList = ({ news }) => {
       key={newsItem.id}
       {...newsItem}
     />
-  ),
-  );
-
+  ));
   return (
-    <Row className="feed-container">
-      <Masonry
-        className="feed-container__my-gallery"
-        disableImagesLoaded={false}
-        updateOnEachImageLoad={false}
-      >
-        {newsListItems}
-      </Masonry>
-    </Row>
+    <div>
+      {news.length &&
+        <Row className="feed-container">
+          <Masonry
+            className="feed-container__my-gallery"
+            disableImagesLoaded={false}
+            updateOnEachImageLoad={false}
+          >
+            {newsListItems}
+          </Masonry>
+        </Row>
+      }
+      {news.length === 0 && <h2 className="error-message">There is no news</h2>}
+    </div>
   );
 };
 

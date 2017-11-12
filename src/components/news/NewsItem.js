@@ -1,20 +1,22 @@
 import React from 'react';
 import { Col } from 'elemental';
-import moment from 'moment';
 import PropTypes from 'prop-types';
 import './news.css';
-import { getFeedItemClass } from '../../utils/common';
+import {
+  getFeedItemClass,
+  getFormattedDate,
+} from '../../utils/common';
+import { FULL_DATE_FORMAT } from '../../constants/constants';
 
 const NewsItem = ({ index, pubDate, title, thumbnail }) => {
   const feedClass = getFeedItemClass(index);
-  const pubDateMoment = moment(pubDate);
-  const date = pubDateMoment.isValid() ? pubDateMoment.format('Do MMMM YYYY') : moment().format('Do MMMM YYYY');
+  const feedDate = getFormattedDate(FULL_DATE_FORMAT, pubDate);
   return (
     <Col className={feedClass}>
       <img className="feed__img" src={thumbnail} alt={title} />
       <Col className="feed__date">
         <span className="feed__date-span">
-          {date}
+          {feedDate}
         </span>
       </Col>
       <Col className="feed__title">
