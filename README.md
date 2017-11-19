@@ -18,9 +18,20 @@ NBA App based on React js that allows you see the latest news around the league,
 ### Installation
 
 - Run npm start to start the application
-- Access the app on localhost:3000
+- The app will be on localhost:3000
+```
+npm start
+```
+
+
+### Tests
+
+- Run npm run test to view the tests
+```
+npm run test
+```
     
-## Usage
+## Features
 
 - View the latest news in the NBA
 - View the scores of the games of a selected date
@@ -32,7 +43,7 @@ NBA App based on React js that allows you see the latest news around the league,
 - Redux
 - Elemental-ui
 
-## Upcoming Work
+## Roadmap
 
 - Stats page where you can see the players stats, leader board, etc
 - Game detail page where you can see the detail of a game, the stats, the results
