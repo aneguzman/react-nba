@@ -18,7 +18,7 @@ NBA App based on React js that allows you see the latest news around the league,
 ### Installation
 
 - Run npm start to start the application
-- The app will be on localhost:3000
+- The app will be available on localhost:3000
 ```
 npm start
 ```
